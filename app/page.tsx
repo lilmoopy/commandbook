@@ -2,20 +2,16 @@
 
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+import Link from "next/link";
 export default function Homepage() {
 
   return (
     <>
-      <h1 className="text-3xl">Homepage</h1>
-      <Button onClick={async () => {
-        const response = await axios.post('/api/create-user', {
+      <h1 className="text-3xl">commandbook</h1>
 
-          firstName: "david",
-          lastName: "stephenson",
-          email: "david@davidystephenson.com"
-        })
-        console.log(response.data);
-      }}> Hello</Button>
+      <Link href="/register">Register</Link>
+
+
     </>
   )
 

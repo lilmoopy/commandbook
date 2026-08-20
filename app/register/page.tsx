@@ -3,11 +3,12 @@
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useState } from "react";
+import { useRouter } from "next/navigation"
 
 export default function Register() {
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const router = useRouter();
+  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
   return (
@@ -17,22 +18,24 @@ export default function Register() {
         event.preventDefault();
 
         const response = await axios.post('/api/create-user', {
-          firstName,
-          lastName,
-          email
+          email, password
         })
         console.log(response.data);
 
+        router.push('/dashboard')
+
       }}>
-        <input placeholder="First Name" value={firstName} onChange={(event) => {
-          setFirstName(event.target.value)
-        }} />
-        <input placeholder="Last Name" value={lastName} onChange={(event) => {
-          setLastName(event.target.value);
-        }} />
+
+
         <input placeholder="email" value={email} onChange={(event) => {
           setEmail(event.target.value);
         }} />
+        <input placeholder="password" value={password} onChange={(event) => {
+          setPassword(event.target.value);
+        }} />
+
+
+
         <Button type="submit">Register</Button>
       </form>
     </>
