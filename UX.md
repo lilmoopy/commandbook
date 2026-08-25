@@ -17,13 +17,6 @@ This file defines the user *experience*
 5. Enter in store domain (fitbagel.com) and submit to search for your shop url. 
 6. Confirm your shop url to navigate to the installer inside the shopify platform
 7. Confirm install inside your shopify platform to link shop data and navigate to /dashboard
-
-
-
-
-
-
-
-
+8. 
 
 ## Staff
